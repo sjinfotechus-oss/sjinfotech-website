@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+:root {
+  --canvas-bg: #000000;
+  --card-dark: #0a0c10;
+  --card-dark-elevated: #11141b;
+  --card-light: #ffffff;
+  --card-light-text: #050505;
+  --border-subtle: rgba(255, 255, 255, 0.12);
+  --border-subtle-hover: rgba(255, 255, 255, 0.35);
+  --border-cyan: rgba(0, 229, 255, 0.35);
+  --text-white: #ffffff;
+  --text-silver: #a0a0a0;
+  --text-muted: #7d7d7d;
+  --font-display: var(--font-michroma), monospace, sans-serif;
+  --font-body: var(--font-poppins), system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--canvas-bg);
+  color: var(--text-white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  selection-background-color: #ffffff;
+  selection-color: #000000;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Vortex Clean Glass Card */
+.vortex-card {
+  background: rgba(14, 16, 22, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 24px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vortex-card:hover {
+  border-color: var(--border-subtle-hover);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 255, 255, 0.04);
+}
+
+/* Vortex Contrast White Card */
+.vortex-card-white {
+  background: #ffffff;
+  color: #050505;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.vortex-card-white:hover {
+  transform: translateY(-2px);
+}
+
+/* Vortex Pill Tag */
+.vortex-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #a0a0a0;
+  font-size: 12px;
+  font-family: var(--font-body);
+  letter-spacing: 0.05em;
+}
+
+/* Vortex Primary CTA Button */
+.vortex-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: #ffffff;
+  color: #000000;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 9999px;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+}
+
+.vortex-btn-primary:hover {
+  background: #e8e8e8;
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.45);
+  transform: scale(1.02);
+}
+
+/* Vortex Secondary Glass Button */
+.vortex-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 9999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.25s ease;
+}
+
+.vortex-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Signature Vortex Chamfered Beveled Box (for CTA & Special Frames) */
+.vortex-chamfer-box {
+  position: relative;
+  clip-path: polygon(
+    0 32px,
+    32px 0,
+    calc(100% - 32px) 0,
+    100% 32px,
+    100% calc(100% - 32px),
+    calc(100% - 32px) 100%,
+    32px 100%,
+    0 calc(100% - 32px)
+  );
+  background: linear-gradient(180deg, #12151e 0%, #080a0e 100%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Soft Ambient Radial Lights (Vortex Style) */
+.vortex-glow-center {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(0, 229, 255, 0.05) 40%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.vortex-glow-cyan {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.12) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.vortex-glow-violet {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* WCAG Focus */
+:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

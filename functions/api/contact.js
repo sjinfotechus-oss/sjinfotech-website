@@ -1,8 +1,6 @@
-interface Env {}
-
-export const onRequestPost: PagesFunction<Env> = async (context) => {
+export async function onRequestPost(context) {
   try {
-    const body: any = await context.request.json();
+    const body = await context.request.json();
     const { fullName, email, organization, subject, message } = body;
 
     // Validation
@@ -47,4 +45,4 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       { status: 500, headers: { "Content-Type": "application/json" } }
     );
   }
-};
+}
